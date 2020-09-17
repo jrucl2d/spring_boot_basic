@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
-    @Autowired // 자동으로 repository를 연결시켜주는데, 구현체인 MemoryMemberRepository를 연결시켜준다.
+//    @Autowired // 자동으로 repository를 연결시켜주는데, 구현체인 MemoryMemberRepository를 연결시켜준다.
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
