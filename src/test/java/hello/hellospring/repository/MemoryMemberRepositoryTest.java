@@ -16,7 +16,7 @@ class MemoryMemberRepositoryTest {
     @AfterEach
     public void afterEach(){
         // Test 하나 끝날때마다 동작할거
-        repository.clearStore(); // 테스트 끝날 때마다 저장소나 공용 변수를 비워줘야 함 
+        repository.clearStore(); // 테스트 끝날 때마다 저장소나 공용 변수를 비워줘야 함
     }
 
     @Test
