@@ -1,6 +1,7 @@
 package hello.hellospring;
 
 import hello.hellospring.repository.JdbcMemberRepository;
+import hello.hellospring.repository.JdbcTemplateMemberRepository;
 import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import hello.hellospring.service.MemberService;
@@ -22,7 +23,8 @@ public class SpringConfig {
     @Bean
     public MemberRepository memberRepository() {
 //        return new MemoryMemberRepository();
-        return new JdbcMemberRepository(datasource); // 여기를 Jdbc로만 연결해주면 됨
+//        return new JdbcMemberRepository(datasource); // 여기를 Jdbc로만 연결해주면 됨
+        return new JdbcTemplateMemberRepository(datasource);
     }
     @Bean
     public MemberService memberService(){
