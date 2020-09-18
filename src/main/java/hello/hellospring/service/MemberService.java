@@ -22,10 +22,20 @@ public class MemberService {
 
     // 회원가입
     public Long join(Member member){
-        // 같은 이름을 가진 회원이 있으면 회원가입이 안 되는 로직이 있다 치자.
-        validateDuplicateMember(member); // 중복회원 검증
-        memberRepository.save(member);
-        return member.getId();
+
+        long start = System.currentTimeMillis();
+
+        try{
+            // 같은 이름을 가진 회원이 있으면 회원가입이 안 되는 로직이 있다 치자.
+            validateDuplicateMember(member); // 중복회원 검증
+            memberRepository.save(member);
+            return member.getId();
+        } finally {
+            long end = System.currentTimeMillis();
+            long timeMs = end - start;
+            System.out.println("join timeMs = " + timeMs);
+        }
+
     }
 
     private void validateDuplicateMember(Member member) {
