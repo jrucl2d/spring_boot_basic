@@ -1,0 +1,10 @@
+server:
+  port: 8095
+
+# 기본 로그인 form에 대해서 ID, password, role을 application.yml에서 정해줄 수 있다.
+spring:
+  security:
+    user:
+      name: yu
+      password: 1234
+      roles: USER
